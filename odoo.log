@@ -1,0 +1,535 @@
+2026-02-06 12:24:41,354 156363 INFO ? odoo: Odoo version 15.0 
+2026-02-06 12:24:41,354 156363 INFO ? odoo: Using configuration file at /home/omar/odoo15/odoo.conf 
+2026-02-06 12:24:41,354 156363 INFO ? odoo: addons paths: ['/home/omar/odoo15/odoo/addons', '/home/omar/.local/share/Odoo/addons/15.0', '/home/omar/odoo15/addons'] 
+2026-02-06 12:24:41,354 156363 INFO ? odoo: database: omar@localhost:5432 
+2026-02-06 12:24:41,527 156363 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-02-06 12:24:41,840 156363 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-06 12:24:41,846 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:24:41,853 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:06,885 156363 INFO ? odoo.http: HTTP Configuring static files 
+2026-02-06 12:25:06,894 156363 INFO LCI odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:06,896 156363 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 12:25:06] "GET /web HTTP/1.1" 500 - 0 0.000 0.009
+2026-02-06 12:25:06,901 156363 ERROR LCI werkzeug: Error on request:
+Traceback (most recent call last):
+  File "/home/omar/odoo15/odoo/modules/registry.py", line 61, in __new__
+    return cls.registries[db_name]
+  File "/home/omar/odoo15/odoo/tools/func.py", line 71, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/omar/odoo15/odoo/tools/lru.py", line 34, in __getitem__
+    a = self.d[obj]
+KeyError: 'LCI'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/omar/odoo15/venv/lib/python3.9/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/omar/odoo15/venv/lib/python3.9/site-packages/werkzeug/serving.py", line 294, in execute
+    application_iter = app(environ, start_response)
+  File "/home/omar/odoo15/odoo/service/server.py", line 482, in app
+    return self.app(e, s)
+  File "/home/omar/odoo15/odoo/service/wsgi_server.py", line 112, in application
+    return application_unproxied(environ, start_response)
+  File "/home/omar/odoo15/odoo/service/wsgi_server.py", line 87, in application_unproxied
+    result = odoo.http.root(environ, start_response)
+  File "/home/omar/odoo15/odoo/http.py", line 1355, in __call__
+    return self.dispatch(environ, start_response)
+  File "/home/omar/odoo15/odoo/http.py", line 1321, in __call__
+    return self.app(environ, start_wrapped)
+  File "/home/omar/odoo15/venv/lib/python3.9/site-packages/werkzeug/middleware/shared_data.py", line 220, in __call__
+    return self.app(environ, start_response)
+  File "/home/omar/odoo15/odoo/http.py", line 1530, in dispatch
+    odoo.registry(db).check_signaling()
+  File "/home/omar/odoo15/odoo/__init__.py", line 126, in registry
+    return modules.registry.Registry(database_name)
+  File "/home/omar/odoo15/odoo/modules/registry.py", line 63, in __new__
+    return cls.new(db_name)
+  File "/home/omar/odoo15/odoo/modules/registry.py", line 75, in new
+    registry.init(db_name)
+  File "/home/omar/odoo15/odoo/modules/registry.py", line 151, in init
+    with closing(self.cursor()) as cr:
+  File "/home/omar/odoo15/odoo/modules/registry.py", line 728, in cursor
+    return self._db.cursor()
+  File "/home/omar/odoo15/odoo/sql_db.py", line 743, in cursor
+    return Cursor(self.__pool, self.__dbname, self.__dsn, serialized=serialized)
+  File "/home/omar/odoo15/odoo/sql_db.py", line 259, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/home/omar/odoo15/odoo/sql_db.py", line 604, in _locked
+    return fun(self, *args, **kwargs)
+  File "/home/omar/odoo15/odoo/sql_db.py", line 670, in borrow
+    result = psycopg2.connect(
+  File "/home/omar/odoo15/venv/lib/python3.9/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (127.0.0.1), port 5432 failed: fe_sendauth: no password supplied - - -
+2026-02-06 12:25:07,957 156363 INFO LCI odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:07,958 156363 INFO LCI odoo.http: Generating nondb routing 
+2026-02-06 12:25:08,002 156363 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 12:25:08] "GET /web/service-worker.js HTTP/1.1" 404 - 0 0.000 0.067
+2026-02-06 12:25:08,067 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:08,086 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:08,089 156363 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 12:25:08] "GET /web HTTP/1.1" 303 - 0 0.000 0.033
+2026-02-06 12:25:08,119 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:08,734 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:08,764 156363 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 12:25:08] "GET /web/database/selector HTTP/1.1" 200 - 0 0.000 0.662
+2026-02-06 12:25:09,124 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 12:25:09,128 156363 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 12:25:09] "GET /web/service-worker.js HTTP/1.1" 404 - 0 0.000 0.025
+2026-02-06 13:41:31,210 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:41:33,750 156363 INFO None odoo.sql_db: Connection to the database failed 
+2026-02-06 13:41:33,783 156363 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 13:41:33] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 2.586
+2026-02-06 13:41:34,814 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:41:34,817 156363 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 13:41:34] "GET /web/service-worker.js HTTP/1.1" 404 - 0 0.000 0.024
+2026-02-06 13:42:50,128 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:42:52,679 156363 INFO None odoo.sql_db: Connection to the database failed 
+2026-02-06 13:42:52,714 156363 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 13:42:52] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 2.596
+2026-02-06 13:42:53,745 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:42:53,748 156363 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 13:42:53] "GET /web/service-worker.js HTTP/1.1" 404 - 0 0.000 0.023
+2026-02-06 13:43:47,794 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:43:50,356 156363 INFO None odoo.sql_db: Connection to the database failed 
+2026-02-06 13:43:50,390 156363 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 13:43:50] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 2.608
+2026-02-06 13:43:51,447 156363 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:43:51,450 156363 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 13:43:51] "GET /web/service-worker.js HTTP/1.1" 404 - 0 0.000 0.024
+2026-02-06 13:44:50,887 156363 INFO ? odoo.service.server: Initiating shutdown 
+2026-02-06 13:44:50,888 156363 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-02-06 13:44:51,040 156363 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 0 connections  
+2026-02-06 13:45:01,044 158015 INFO ? odoo: Odoo version 15.0 
+2026-02-06 13:45:01,045 158015 INFO ? odoo: Using configuration file at /home/omar/odoo15/odoo.conf 
+2026-02-06 13:45:01,045 158015 INFO ? odoo: addons paths: ['/home/omar/odoo15/odoo/addons', '/home/omar/.local/share/Odoo/addons/15.0', '/home/omar/odoo15/addons'] 
+2026-02-06 13:45:01,045 158015 INFO ? odoo: database: omar@localhost:5432 
+2026-02-06 13:45:01,184 158015 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-02-06 13:45:01,431 158015 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-06 13:45:01,440 158015 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:45:01,449 158015 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:45:11,124 158015 INFO ? odoo.http: HTTP Configuring static files 
+2026-02-06 13:45:11,138 158015 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:45:11,140 158015 INFO ? odoo.http: Generating nondb routing 
+2026-02-06 13:45:13,679 158015 INFO None odoo.sql_db: Connection to the database failed 
+2026-02-06 13:45:13,721 158015 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 13:45:13] "POST /web/database/create HTTP/1.1" 200 - 0 0.000 2.593
+2026-02-06 13:45:14,780 158015 INFO ? odoo.sql_db: Connection to the database failed 
+2026-02-06 13:45:14,783 158015 INFO ? werkzeug: 127.0.0.1 - - [06/Feb/2026 13:45:14] "GET /web/service-worker.js HTTP/1.1" 404 - 0 0.000 0.024
+2026-02-06 13:50:32,955 158015 INFO ? odoo.service.server: Initiating shutdown 
+2026-02-06 13:50:32,956 158015 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-02-06 13:50:33,235 158015 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 0 connections  
+2026-02-06 14:20:41,894 159718 INFO ? odoo: Odoo version 15.0 
+2026-02-06 14:20:41,894 159718 INFO ? odoo: Using configuration file at /home/omar/odoo15/odoo.conf 
+2026-02-06 14:20:41,894 159718 INFO ? odoo: addons paths: ['/home/omar/odoo15/odoo/addons', '/home/omar/.local/share/Odoo/addons/15.0', '/home/omar/odoo15/addons'] 
+2026-02-06 14:20:41,895 159718 INFO ? odoo: database: omar@localhost:5432 
+2026-02-06 14:20:42,033 159718 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-02-06 14:20:42,278 159718 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-06 14:20:50,731 159718 INFO ? odoo.http: HTTP Configuring static files 
+2026-02-06 14:20:50,803 159718 INFO LCI odoo.modules.loading: loading 1 modules... 
+2026-02-06 14:20:50,816 159718 INFO LCI odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-06 14:20:50,826 159718 INFO LCI odoo.modules.loading: loading 7 modules... 
+2026-02-06 14:20:50,946 159718 INFO LCI odoo.modules.loading: 7 modules loaded in 0.12s, 0 queries (+0 extra) 
+2026-02-06 14:20:50,994 159718 INFO LCI odoo.modules.loading: Modules loaded. 
+2026-02-06 14:20:50,996 159718 INFO LCI odoo.modules.registry: Registry loaded in 0.232s 
+2026-02-06 14:20:50,998 159718 INFO LCI odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-02-06 14:20:53,677 159718 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:20:53] "POST /web/database/create HTTP/1.1" 200 - 20 0.023 2.920
+2026-02-06 14:20:54,727 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:20:54] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.004 0.007
+2026-02-06 14:21:05,989 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:05] "GET /web?db=LCI HTTP/1.1" 303 - 1 0.001 0.009
+2026-02-06 14:21:07,215 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:07] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.012 0.049
+2026-02-06 14:21:08,363 159718 INFO LCI odoo.modules.registry: At least one model cache has been invalidated, signaling through the database. 
+2026-02-06 14:21:08,365 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/login HTTP/1.1" 200 - 108 0.106 2.249
+2026-02-06 14:21:08,579 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/assets/196-2a4bb5c/web.assets_frontend.min.css HTTP/1.1" 200 - 4 0.020 0.131
+2026-02-06 14:21:08,585 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/assets/195-2a89851/web.assets_common.min.css HTTP/1.1" 200 - 5 0.013 0.146
+2026-02-06 14:21:08,587 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/assets/197-4dcb763/web.assets_common_minimal.min.js HTTP/1.1" 200 - 4 0.038 0.118
+2026-02-06 14:21:08,588 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/assets/198-3e66210/web.assets_frontend_minimal.min.js HTTP/1.1" 200 - 3 0.015 0.140
+2026-02-06 14:21:08,612 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/binary/company_logo HTTP/1.1" 200 - 2 0.004 0.011
+2026-02-06 14:21:08,773 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/assets/199-629f9d3/web.assets_common_lazy.min.js HTTP/1.1" 200 - 3 0.002 0.021
+2026-02-06 14:21:08,996 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:08] "GET /web/assets/200-9f3f13b/web.assets_frontend_lazy.min.js HTTP/1.1" 200 - 3 0.001 0.008
+2026-02-06 14:21:09,113 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:09] "GET /web/webclient/translations/1770387669061 HTTP/1.1" 200 - 9 0.016 0.030
+2026-02-06 14:21:09,151 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:09] "GET /web/webclient/qweb/1770387669119?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.022
+2026-02-06 14:21:09,207 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:09] "GET /web/webclient/translations/1770387669157 HTTP/1.1" 200 - 6 0.010 0.034
+2026-02-06 14:21:09,407 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:09] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:21:12,287 159718 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:21:12,435 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:12] "POST /web/login HTTP/1.1" 200 - 27 0.054 0.185
+2026-02-06 14:21:13,079 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:13] "GET /web/webclient/translations/1770387673006 HTTP/1.1" 200 - 6 0.020 0.044
+2026-02-06 14:21:13,153 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:13] "GET /web/webclient/qweb/1770387673090?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.009 0.044
+2026-02-06 14:21:13,250 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:13] "GET /web/webclient/translations/1770387673164 HTTP/1.1" 200 - 6 0.022 0.053
+2026-02-06 14:21:13,498 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:13] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.007
+2026-02-06 14:21:19,520 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:19] "GET /web/database/manager HTTP/1.1" 200 - 4 0.005 0.969
+2026-02-06 14:21:20,540 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:21:20] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.007
+2026-02-06 14:23:00,762 159718 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:00] "POST /web/database/create HTTP/1.1" 200 - 4 0.004 2.652
+2026-02-06 14:23:01,787 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:01] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:23:21,604 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:21] "GET /web?db=LCI HTTP/1.1" 303 - 1 0.001 0.007
+2026-02-06 14:23:21,719 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:21] "GET /web/login HTTP/1.1" 200 - 5 0.013 0.082
+2026-02-06 14:23:22,379 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:22] "GET /web/webclient/translations/1770387802328 HTTP/1.1" 200 - 6 0.012 0.033
+2026-02-06 14:23:22,427 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:22] "GET /web/webclient/qweb/1770387802384?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.029
+2026-02-06 14:23:22,478 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:22] "GET /web/webclient/translations/1770387802432 HTTP/1.1" 200 - 6 0.012 0.027
+2026-02-06 14:23:22,666 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:22] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:23:24,508 159718 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:23:24,527 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:24] "POST /web/login HTTP/1.1" 200 - 6 0.016 0.092
+2026-02-06 14:23:25,287 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:25] "GET /web/webclient/translations/1770387805146 HTTP/1.1" 200 - 6 0.020 0.108
+2026-02-06 14:23:25,337 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:25] "GET /web/webclient/qweb/1770387805296?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.006 0.028
+2026-02-06 14:23:25,412 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:25] "GET /web/webclient/translations/1770387805344 HTTP/1.1" 200 - 6 0.016 0.046
+2026-02-06 14:23:25,552 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:25] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.007
+2026-02-06 14:23:36,617 159718 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:23:36,636 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:36] "POST /web/login HTTP/1.1" 200 - 6 0.015 0.090
+2026-02-06 14:23:37,123 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:37] "GET /web/webclient/translations/1770387817075 HTTP/1.1" 200 - 6 0.013 0.028
+2026-02-06 14:23:37,161 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:37] "GET /web/webclient/qweb/1770387817129?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.022
+2026-02-06 14:23:37,218 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:37] "GET /web/webclient/translations/1770387817167 HTTP/1.1" 200 - 6 0.011 0.033
+2026-02-06 14:23:37,665 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:37] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:23:46,400 159718 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:23:46,408 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:46] "POST /web/login HTTP/1.1" 200 - 6 0.007 0.043
+2026-02-06 14:23:46,695 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:46] "GET /web/webclient/translations/1770387826644 HTTP/1.1" 200 - 6 0.013 0.031
+2026-02-06 14:23:46,738 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:46] "GET /web/webclient/qweb/1770387826702?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.025
+2026-02-06 14:23:46,799 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:46] "GET /web/webclient/translations/1770387826744 HTTP/1.1" 200 - 6 0.013 0.036
+2026-02-06 14:23:47,435 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:23:47] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.009
+2026-02-06 14:24:00,641 159718 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:24:00,659 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:00] "POST /web/login HTTP/1.1" 200 - 6 0.018 0.090
+2026-02-06 14:24:01,330 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:01] "GET /web/webclient/translations/1770387841258 HTTP/1.1" 200 - 6 0.016 0.041
+2026-02-06 14:24:01,386 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:01] "GET /web/webclient/qweb/1770387841339?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.007 0.033
+2026-02-06 14:24:01,465 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:01] "GET /web/webclient/translations/1770387841394 HTTP/1.1" 200 - 6 0.015 0.047
+2026-02-06 14:24:01,790 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:01] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:24:04,966 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:04] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:24:43,941 159718 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:43] "POST /web/database/create HTTP/1.1" 200 - 4 0.004 2.764
+2026-02-06 14:24:45,017 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:24:45] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:27:38,475 159718 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:27:38] "POST /web/database/create HTTP/1.1" 200 - 4 0.004 2.534
+2026-02-06 14:27:39,496 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:27:39] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:28:00,199 159718 ERROR LCI odoo.addons.web.controllers.main: Database.backup 
+Traceback (most recent call last):
+  File "/home/omar/odoo15/addons/web/controllers/main.py", line 1127, in backup
+    odoo.service.db.check_super(master_pwd)
+  File "/home/omar/odoo15/odoo/service/db.py", line 51, in check_super
+    raise odoo.exceptions.AccessDenied()
+odoo.exceptions.AccessDenied: Access Denied
+2026-02-06 14:28:01,036 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:01] "POST /web/database/backup HTTP/1.1" 200 - 4 0.005 2.590
+2026-02-06 14:28:02,117 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:02] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:28:03,120 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:03] "GET /web?db=LCI HTTP/1.1" 303 - 1 0.001 0.008
+2026-02-06 14:28:03,240 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:03] "GET /web/login HTTP/1.1" 200 - 5 0.012 0.091
+2026-02-06 14:28:03,859 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:03] "GET /web/webclient/translations/1770388083755 HTTP/1.1" 200 - 6 0.024 0.066
+2026-02-06 14:28:03,935 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:03] "GET /web/webclient/qweb/1770388083871?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.008 0.047
+2026-02-06 14:28:04,043 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:04] "GET /web/webclient/translations/1770388083947 HTTP/1.1" 200 - 6 0.024 0.060
+2026-02-06 14:28:04,169 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:04] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.006
+2026-02-06 14:28:08,615 159718 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:28:08,633 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:08] "POST /web/login HTTP/1.1" 200 - 6 0.014 0.088
+2026-02-06 14:28:09,242 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:09] "GET /web/webclient/translations/1770388089124 HTTP/1.1" 200 - 6 0.026 0.075
+2026-02-06 14:28:09,335 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:09] "GET /web/webclient/qweb/1770388089264?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.009 0.050
+2026-02-06 14:28:09,440 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:09] "GET /web/webclient/translations/1770388089356 HTTP/1.1" 200 - 6 0.023 0.050
+2026-02-06 14:28:09,657 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:09] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:28:25,409 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:28:25] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:29:17,104 159718 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:29:17] "POST /web/database/create HTTP/1.1" 200 - 4 0.004 2.842
+2026-02-06 14:29:18,174 159718 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:29:18] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.006
+2026-02-06 14:38:30,084 159718 INFO ? odoo.service.server: Initiating shutdown 
+2026-02-06 14:38:30,084 159718 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-02-06 14:38:30,121 159718 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 6 connections  
+2026-02-06 14:45:39,835 162279 INFO ? odoo: Odoo version 15.0 
+2026-02-06 14:45:39,835 162279 INFO ? odoo: Using configuration file at /home/omar/odoo15/odoo.conf 
+2026-02-06 14:45:39,835 162279 INFO ? odoo: addons paths: ['/home/omar/odoo15/odoo/addons', '/home/omar/.local/share/Odoo/addons/15.0', '/home/omar/odoo15/addons'] 
+2026-02-06 14:45:39,835 162279 INFO ? odoo: database: omar@localhost:5432 
+2026-02-06 14:45:39,979 162279 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-02-06 14:45:40,238 162279 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-06 14:45:46,272 162279 INFO ? odoo.http: HTTP Configuring static files 
+2026-02-06 14:45:46,314 162279 INFO LCI odoo.modules.loading: loading 1 modules... 
+2026-02-06 14:45:46,328 162279 INFO LCI odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-06 14:45:46,336 162279 INFO LCI odoo.modules.loading: loading 7 modules... 
+2026-02-06 14:45:46,393 162279 INFO LCI odoo.modules.loading: 7 modules loaded in 0.06s, 0 queries (+0 extra) 
+2026-02-06 14:45:46,440 162279 INFO LCI odoo.modules.loading: Modules loaded. 
+2026-02-06 14:45:46,442 162279 INFO LCI odoo.modules.registry: Registry loaded in 0.166s 
+2026-02-06 14:45:46,444 162279 INFO LCI odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-02-06 14:45:49,333 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:49] "POST /web/database/create HTTP/1.1" 200 - 19 0.021 3.036
+2026-02-06 14:45:50,371 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:50] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.004 0.008
+2026-02-06 14:45:50,756 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:50] "GET /web?db=LCI HTTP/1.1" 303 - 1 0.001 0.008
+2026-02-06 14:45:51,204 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:51] "GET /web/login HTTP/1.1" 200 - 81 0.082 0.347
+2026-02-06 14:45:51,496 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:51] "GET /web/webclient/translations/1770389151444 HTTP/1.1" 200 - 10 0.016 0.029
+2026-02-06 14:45:51,535 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:51] "GET /web/webclient/qweb/1770389151502?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.025
+2026-02-06 14:45:51,590 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:51] "GET /web/webclient/translations/1770389151542 HTTP/1.1" 200 - 6 0.012 0.031
+2026-02-06 14:45:51,810 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:51] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:45:55,190 162279 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:45:55,209 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:55] "POST /web/login HTTP/1.1" 200 - 9 0.027 0.156
+2026-02-06 14:45:55,573 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:55] "GET /web/webclient/translations/1770389155518 HTTP/1.1" 200 - 6 0.011 0.037
+2026-02-06 14:45:55,621 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:55] "GET /web/webclient/qweb/1770389155580?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.031
+2026-02-06 14:45:55,725 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:55] "GET /web/webclient/translations/1770389155633 HTTP/1.1" 200 - 6 0.021 0.061
+2026-02-06 14:45:56,286 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:45:56] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:46:03,762 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:46:03] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:47:00,767 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:47:00] "POST /web/database/create HTTP/1.1" 200 - 4 0.004 2.947
+2026-02-06 14:47:01,856 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:47:01] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:47:28,757 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:47:28] "POST /web/database/duplicate HTTP/1.1" 200 - 4 0.005 2.593
+2026-02-06 14:47:29,834 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:47:29] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:48:09,186 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:09] "POST /web/database/change_password HTTP/1.1" 200 - 4 0.004 2.010
+2026-02-06 14:48:10,220 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:10] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:48:24,112 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:24] "POST /web/database/change_password HTTP/1.1" 200 - 4 0.006 1.795
+2026-02-06 14:48:25,134 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:25] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.001 0.003
+2026-02-06 14:48:45,785 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:45] "POST /web/database/change_password HTTP/1.1" 200 - 4 0.005 1.945
+2026-02-06 14:48:46,848 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:46] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:48:49,813 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:49] "GET /web?db=LCI HTTP/1.1" 303 - 1 0.001 0.008
+2026-02-06 14:48:49,932 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:49] "GET /web/login HTTP/1.1" 200 - 5 0.013 0.086
+2026-02-06 14:48:50,462 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:50] "GET /web/webclient/translations/1770389330411 HTTP/1.1" 200 - 6 0.014 0.030
+2026-02-06 14:48:50,502 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:50] "GET /web/webclient/qweb/1770389330468?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.024
+2026-02-06 14:48:50,613 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:50] "GET /web/webclient/translations/1770389330507 HTTP/1.1" 200 - 6 0.011 0.087
+2026-02-06 14:48:50,888 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:50] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.004 0.009
+2026-02-06 14:48:55,029 162279 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:48:55,045 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:55] "POST /web/login HTTP/1.1" 200 - 6 0.016 0.089
+2026-02-06 14:48:55,638 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:55] "GET /web/webclient/translations/1770389335531 HTTP/1.1" 200 - 6 0.026 0.065
+2026-02-06 14:48:55,719 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:55] "GET /web/webclient/qweb/1770389335650?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.009 0.048
+2026-02-06 14:48:55,811 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:55] "GET /web/webclient/translations/1770389335729 HTTP/1.1" 200 - 6 0.020 0.051
+2026-02-06 14:48:56,069 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:48:56] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:49:04,540 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:49:04] "GET /web/database/manager HTTP/1.1" 200 - 4 0.006 1.179
+2026-02-06 14:49:05,572 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:49:05] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:49:19,967 162279 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:49:19] "POST /web/database/duplicate HTTP/1.1" 200 - 4 0.005 2.561
+2026-02-06 14:49:20,987 162279 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:49:20] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:49:52,665 162279 INFO ? odoo.service.server: Initiating shutdown 
+2026-02-06 14:49:52,665 162279 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-02-06 14:49:53,091 162279 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 4 connections  
+2026-02-06 14:51:06,249 162929 INFO ? odoo: Odoo version 15.0 
+2026-02-06 14:51:06,249 162929 INFO ? odoo: Using configuration file at /home/omar/odoo15/odoo.conf 
+2026-02-06 14:51:06,249 162929 INFO ? odoo: addons paths: ['/home/omar/odoo15/odoo/addons', '/home/omar/.local/share/Odoo/addons/15.0', '/home/omar/odoo15/addons'] 
+2026-02-06 14:51:06,249 162929 INFO ? odoo: database: omar@localhost:5432 
+2026-02-06 14:51:06,399 162929 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-02-06 14:51:06,648 162929 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-06 14:51:12,193 162929 INFO ? odoo.http: HTTP Configuring static files 
+2026-02-06 14:51:12,234 162929 INFO LCI odoo.modules.loading: loading 1 modules... 
+2026-02-06 14:51:12,247 162929 INFO LCI odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-06 14:51:12,256 162929 INFO LCI odoo.modules.loading: loading 7 modules... 
+2026-02-06 14:51:12,310 162929 INFO LCI odoo.modules.loading: 7 modules loaded in 0.05s, 0 queries (+0 extra) 
+2026-02-06 14:51:12,358 162929 INFO LCI odoo.modules.loading: Modules loaded. 
+2026-02-06 14:51:12,360 162929 INFO LCI odoo.modules.registry: Registry loaded in 0.163s 
+2026-02-06 14:51:12,362 162929 INFO LCI odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-02-06 14:51:12,578 162929 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:12] "POST /web/database/duplicate HTTP/1.1" 200 - 19 0.019 0.363
+2026-02-06 14:51:13,625 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:13] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.004 0.008
+2026-02-06 14:51:28,740 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:28] "GET /web/database/duplicate HTTP/1.1" 405 - 1 0.001 0.005
+2026-02-06 14:51:29,770 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:29] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:51:34,891 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:34] "GET /web/database HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:51:35,914 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:35] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.007
+2026-02-06 14:51:47,331 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:47] "GET /web HTTP/1.1" 303 - 1 0.001 0.008
+2026-02-06 14:51:47,801 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:47] "GET /web/login HTTP/1.1" 200 - 81 0.082 0.363
+2026-02-06 14:51:48,296 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:48] "GET /web/webclient/translations/1770389508248 HTTP/1.1" 200 - 10 0.015 0.029
+2026-02-06 14:51:48,413 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:48] "GET /web/webclient/qweb/1770389508303?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.009 0.095
+2026-02-06 14:51:48,421 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:48] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.004 0.064
+2026-02-06 14:51:48,511 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:48] "GET /web/webclient/translations/1770389508426 HTTP/1.1" 200 - 6 0.021 0.053
+2026-02-06 14:51:49,459 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:49] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:51:52,706 162929 INFO LCI odoo.addons.base.models.res_users: Login failed for db:LCI login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:51:52,726 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:52] "POST /web/login HTTP/1.1" 200 - 9 0.025 0.090
+2026-02-06 14:51:53,235 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:53] "GET /web/webclient/translations/1770389513186 HTTP/1.1" 200 - 6 0.012 0.029
+2026-02-06 14:51:53,275 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:53] "GET /web/webclient/qweb/1770389513241?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.024
+2026-02-06 14:51:53,332 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:53] "GET /web/webclient/translations/1770389513282 HTTP/1.1" 200 - 6 0.011 0.031
+2026-02-06 14:51:53,756 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:53] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:51:56,228 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:56] "GET /web/database/manager HTTP/1.1" 200 - 4 0.012 0.193
+2026-02-06 14:51:57,292 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:51:57] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:52:14,877 162929 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:52:14] "POST /web/database/duplicate HTTP/1.1" 200 - 4 0.012 0.168
+2026-02-06 14:52:15,930 162929 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:52:15] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:52:52,940 162929 INFO ? odoo.service.server: Initiating shutdown 
+2026-02-06 14:52:52,941 162929 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-02-06 14:52:53,007 162929 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 4 connections  
+2026-02-06 14:54:55,329 163384 INFO ? odoo: Odoo version 15.0 
+2026-02-06 14:54:55,330 163384 INFO ? odoo: Using configuration file at /home/omar/odoo15/odoo.conf 
+2026-02-06 14:54:55,330 163384 INFO ? odoo: addons paths: ['/home/omar/odoo15/odoo/addons', '/home/omar/.local/share/Odoo/addons/15.0', '/home/omar/odoo15/addons'] 
+2026-02-06 14:54:55,330 163384 INFO ? odoo: database: omar@localhost:5432 
+2026-02-06 14:54:55,466 163384 INFO ? odoo.addons.base.models.ir_actions_report: Will use the Wkhtmltopdf binary at /usr/local/bin/wkhtmltopdf 
+2026-02-06 14:54:55,720 163384 INFO ? odoo.service.server: HTTP service (werkzeug) running on omar-X542UN:8069 
+2026-02-06 14:55:01,610 163384 INFO ? odoo.http: HTTP Configuring static files 
+2026-02-06 14:55:01,652 163384 INFO LCI odoo.modules.loading: loading 1 modules... 
+2026-02-06 14:55:01,666 163384 INFO LCI odoo.modules.loading: 1 modules loaded in 0.01s, 0 queries (+0 extra) 
+2026-02-06 14:55:01,674 163384 INFO LCI odoo.modules.loading: loading 7 modules... 
+2026-02-06 14:55:01,730 163384 INFO LCI odoo.modules.loading: 7 modules loaded in 0.06s, 0 queries (+0 extra) 
+2026-02-06 14:55:01,778 163384 INFO LCI odoo.modules.loading: Modules loaded. 
+2026-02-06 14:55:01,780 163384 INFO LCI odoo.modules.registry: Registry loaded in 0.166s 
+2026-02-06 14:55:01,782 163384 INFO LCI odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-02-06 14:55:02,000 163384 INFO None werkzeug: 127.0.0.1 - - [06/Feb/2026 14:55:02] "POST /web/database/duplicate HTTP/1.1" 200 - 19 0.020 0.367
+2026-02-06 14:55:03,094 163384 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:55:03] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.004 0.008
+2026-02-06 14:56:12,621 163384 INFO None odoo.service.db: Create database `odoo15`. 
+2026-02-06 14:56:16,087 163384 INFO odoo15 odoo.modules.loading: loading 1 modules... 
+2026-02-06 14:56:16,087 163384 INFO odoo15 odoo.modules.loading: Loading module base (1/1) 
+2026-02-06 14:56:16,158 163384 INFO odoo15 odoo.modules.registry: module base: creating or updating database tables 
+2026-02-06 14:56:19,468 163384 INFO odoo15 odoo.models: Storing computed values of ir.module.module.menus_by_module 
+2026-02-06 14:56:19,468 163384 INFO odoo15 odoo.models: Storing computed values of ir.module.module.reports_by_module 
+2026-02-06 14:56:19,468 163384 INFO odoo15 odoo.models: Storing computed values of ir.module.module.views_by_module 
+2026-02-06 14:56:19,472 163384 INFO odoo15 odoo.models: Storing computed values of res.partner.display_name 
+2026-02-06 14:56:19,472 163384 INFO odoo15 odoo.models: Storing computed values of res.partner.partner_share 
+2026-02-06 14:56:19,473 163384 INFO odoo15 odoo.models: Storing computed values of res.partner.commercial_partner_id 
+2026-02-06 14:56:19,473 163384 INFO odoo15 odoo.models: Storing computed values of res.partner.commercial_company_name 
+2026-02-06 14:56:19,473 163384 INFO odoo15 odoo.models: Storing computed values of res.currency.decimal_places 
+2026-02-06 14:56:19,479 163384 INFO odoo15 odoo.models: Storing computed values of res.company.logo_web 
+2026-02-06 14:56:19,480 163384 INFO odoo15 odoo.models: Storing computed values of res.company.company_registry 
+2026-02-06 14:56:19,486 163384 INFO odoo15 odoo.models: Storing computed values of res.users.share 
+2026-02-06 14:56:22,541 163384 INFO odoo15 odoo.modules.loading: loading base/data/res_bank.xml 
+2026-02-06 14:56:22,548 163384 INFO odoo15 odoo.modules.loading: loading base/data/res.lang.csv 
+2026-02-06 14:56:22,647 163384 INFO LCI odoo.modules.loading: loading base/data/res_lang_data.xml 
+2026-02-06 14:56:22,723 163384 INFO odoo15 odoo.modules.loading: loading base/data/res_partner_data.xml 
+2026-02-06 14:56:23,010 163384 INFO odoo15 odoo.modules.loading: loading base/data/res_currency_data.xml 
+2026-02-06 14:56:24,631 163384 INFO odoo15 odoo.modules.loading: loading base/data/res_company_data.xml 
+2026-02-06 14:56:24,672 163384 INFO odoo15 odoo.modules.loading: loading base/data/res_users_data.xml 
+2026-02-06 14:56:26,379 163384 INFO odoo15 odoo.modules.loading: loading base/data/report_paperformat_data.xml 
+2026-02-06 14:56:26,389 163384 INFO odoo15 odoo.modules.loading: loading base/data/res_country_data.xml 
+2026-02-06 14:56:27,040 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_demo_data.xml 
+2026-02-06 14:56:27,053 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_config_parameter_data.xml 
+2026-02-06 14:56:27,063 163384 INFO odoo15 odoo.modules.loading: loading base/security/base_groups.xml 
+2026-02-06 14:56:27,354 163384 INFO odoo15 odoo.modules.loading: loading base/security/base_security.xml 
+2026-02-06 14:56:27,675 163384 INFO odoo15 odoo.modules.loading: loading base/views/base_menus.xml 
+2026-02-06 14:56:27,868 163384 INFO odoo15 odoo.modules.loading: loading base/views/decimal_precision_views.xml 
+2026-02-06 14:56:27,930 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_config_views.xml 
+2026-02-06 14:56:27,963 163384 INFO odoo15 odoo.modules.loading: loading base/data/res.country.state.csv 
+2026-02-06 14:56:29,939 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_actions_views.xml 
+2026-02-06 14:56:30,109 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_asset_views.xml 
+2026-02-06 14:56:30,139 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_config_parameter_views.xml 
+2026-02-06 14:56:30,168 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_cron_views.xml 
+2026-02-06 14:56:30,213 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_cron_trigger_views.xml 
+2026-02-06 14:56:30,241 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_filters_views.xml 
+2026-02-06 14:56:30,272 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_mail_server_views.xml 
+2026-02-06 14:56:30,305 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_model_views.xml 
+2026-02-06 14:56:30,538 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_attachment_views.xml 
+2026-02-06 14:56:30,575 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_rule_views.xml 
+2026-02-06 14:56:30,615 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_sequence_views.xml 
+2026-02-06 14:56:30,650 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_translation_views.xml 
+2026-02-06 14:56:30,700 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_ui_menu_views.xml 
+2026-02-06 14:56:30,734 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_ui_view_views.xml 
+2026-02-06 14:56:30,814 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_default_views.xml 
+2026-02-06 14:56:30,847 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_cron_data.xml 
+2026-02-06 14:56:30,857 163384 INFO odoo15 odoo.modules.loading: loading base/report/ir_model_report.xml 
+2026-02-06 14:56:30,865 163384 INFO odoo15 odoo.modules.loading: loading base/report/ir_model_templates.xml 
+2026-02-06 14:56:30,874 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_logging_views.xml 
+2026-02-06 14:56:30,911 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_qweb_widget_templates.xml 
+2026-02-06 14:56:30,941 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_module_views.xml 
+2026-02-06 14:56:31,193 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_module_category_data.xml 
+2026-02-06 14:56:31,487 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_module_module.xml 
+2026-02-06 14:56:31,732 163384 INFO odoo15 odoo.modules.loading: loading base/report/ir_module_reports.xml 
+2026-02-06 14:56:31,746 163384 INFO odoo15 odoo.modules.loading: loading base/report/ir_module_report_templates.xml 
+2026-02-06 14:56:31,765 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_module_update_views.xml 
+2026-02-06 14:56:31,810 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_language_install_views.xml 
+2026-02-06 14:56:31,840 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_import_language_views.xml 
+2026-02-06 14:56:31,888 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_module_upgrade_views.xml 
+2026-02-06 14:56:31,959 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_module_uninstall_views.xml 
+2026-02-06 14:56:31,983 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_export_language_views.xml 
+2026-02-06 14:56:32,026 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_update_translations_views.xml 
+2026-02-06 14:56:32,072 163384 INFO odoo15 odoo.modules.loading: loading base/wizard/base_partner_merge_views.xml 
+2026-02-06 14:56:32,121 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_actions_data.xml 
+2026-02-06 14:56:32,136 163384 INFO odoo15 odoo.modules.loading: loading base/data/ir_demo_failure_data.xml 
+2026-02-06 14:56:32,174 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_profile_views.xml 
+2026-02-06 14:56:32,261 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_company_views.xml 
+2026-02-06 14:56:32,340 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_lang_views.xml 
+2026-02-06 14:56:32,393 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_partner_views.xml 
+2026-02-06 14:56:32,666 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_bank_views.xml 
+2026-02-06 14:56:32,787 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_country_views.xml 
+2026-02-06 14:56:32,921 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_currency_views.xml 
+2026-02-06 14:56:33,050 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_users_views.xml 
+2026-02-06 14:56:33,433 163384 INFO odoo15 odoo.modules.loading: loading base/views/ir_property_views.xml 
+2026-02-06 14:56:33,509 163384 INFO odoo15 odoo.modules.loading: loading base/views/res_config_settings_views.xml 
+2026-02-06 14:56:33,538 163384 INFO odoo15 odoo.modules.loading: loading base/views/report_paperformat_views.xml 
+2026-02-06 14:56:33,641 163384 INFO odoo15 odoo.modules.loading: loading base/views/onboarding_views.xml 
+2026-02-06 14:56:33,734 163384 INFO odoo15 odoo.modules.loading: loading base/security/ir.model.access.csv 
+2026-02-06 14:56:34,524 163384 INFO odoo15 odoo.modules.loading: Module base loaded in 18.44s, 9666 queries 
+2026-02-06 14:56:34,524 163384 INFO odoo15 odoo.modules.loading: 1 modules loaded in 18.44s, 9666 queries (+0 extra) 
+2026-02-06 14:56:34,663 163384 INFO odoo15 odoo.modules.loading: updating modules list 
+2026-02-06 14:56:34,664 163384 INFO odoo15 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via 127.0.0.1 
+2026-02-06 14:56:36,827 163384 INFO odoo15 odoo.modules.loading: loading 7 modules... 
+2026-02-06 14:56:36,827 163384 INFO odoo15 odoo.modules.loading: Loading module web (2/7) 
+2026-02-06 14:56:36,941 163384 INFO odoo15 odoo.modules.registry: module web: creating or updating database tables 
+2026-02-06 14:56:37,950 163384 INFO odoo15 odoo.modules.loading: loading web/security/ir.model.access.csv 
+2026-02-06 14:56:37,980 163384 INFO odoo15 odoo.modules.loading: loading web/views/webclient_templates.xml 
+2026-02-06 14:56:38,164 163384 INFO odoo15 odoo.modules.loading: loading web/views/report_templates.xml 
+2026-02-06 14:56:38,439 163384 INFO odoo15 odoo.modules.loading: loading web/views/base_document_layout_views.xml 
+2026-02-06 14:56:38,480 163384 INFO odoo15 odoo.modules.loading: loading web/views/speedscope_template.xml 
+2026-02-06 14:56:38,498 163384 INFO odoo15 odoo.modules.loading: loading web/views/lazy_assets.xml 
+2026-02-06 14:56:38,522 163384 INFO odoo15 odoo.modules.loading: loading web/data/report_layout.xml 
+2026-02-06 14:56:38,679 163384 INFO odoo15 odoo.modules.loading: Module web loaded in 1.85s, 884 queries 
+2026-02-06 14:56:38,680 163384 INFO odoo15 odoo.modules.loading: Loading module auth_totp (3/7) 
+2026-02-06 14:56:38,739 163384 INFO odoo15 odoo.modules.registry: module auth_totp: creating or updating database tables 
+2026-02-06 14:56:38,848 163384 INFO odoo15 odoo.modules.loading: loading auth_totp/security/security.xml 
+2026-02-06 14:56:38,897 163384 INFO odoo15 odoo.modules.loading: loading auth_totp/security/ir.model.access.csv 
+2026-02-06 14:56:38,910 163384 INFO odoo15 odoo.modules.loading: loading auth_totp/data/ir_action_data.xml 
+2026-02-06 14:56:38,921 163384 INFO odoo15 odoo.modules.loading: loading auth_totp/views/res_users_views.xml 
+2026-02-06 14:56:39,010 163384 INFO odoo15 odoo.modules.loading: loading auth_totp/views/templates.xml 
+2026-02-06 14:56:39,030 163384 INFO odoo15 odoo.modules.loading: loading auth_totp/wizard/auth_totp_wizard_views.xml 
+2026-02-06 14:56:39,104 163384 INFO odoo15 odoo.modules.loading: Module auth_totp loaded in 0.42s, 186 queries 
+2026-02-06 14:56:39,104 163384 INFO odoo15 odoo.modules.loading: Loading module base_import (4/7) 
+2026-02-06 14:56:39,220 163384 INFO odoo15 odoo.modules.registry: module base_import: creating or updating database tables 
+2026-02-06 14:56:41,510 163384 INFO odoo15 odoo.modules.loading: loading base_import/security/ir.model.access.csv 
+2026-02-06 14:56:41,575 163384 INFO odoo15 odoo.modules.loading: Module base_import loaded in 2.47s, 916 queries 
+2026-02-06 14:56:41,575 163384 INFO odoo15 odoo.modules.loading: Loading module web_editor (5/7) 
+2026-02-06 14:56:41,643 163384 INFO odoo15 odoo.modules.registry: module web_editor: creating or updating database tables 
+2026-02-06 14:56:41,936 163384 INFO odoo15 odoo.modules.loading: loading web_editor/security/ir.model.access.csv 
+2026-02-06 14:56:41,965 163384 INFO odoo15 odoo.modules.loading: loading web_editor/data/editor_assets.xml 
+2026-02-06 14:56:41,982 163384 INFO odoo15 odoo.modules.loading: loading web_editor/views/editor.xml 
+2026-02-06 14:56:42,066 163384 INFO odoo15 odoo.modules.loading: loading web_editor/views/snippets.xml 
+2026-02-06 14:56:42,218 163384 INFO odoo15 odoo.modules.loading: Module web_editor loaded in 0.64s, 240 queries 
+2026-02-06 14:56:42,218 163384 INFO odoo15 odoo.modules.loading: Loading module web_kanban_gauge (6/7) 
+2026-02-06 14:56:42,374 163384 INFO odoo15 odoo.modules.loading: Module web_kanban_gauge loaded in 0.16s, 18 queries 
+2026-02-06 14:56:42,374 163384 INFO odoo15 odoo.modules.loading: Loading module web_tour (7/7) 
+2026-02-06 14:56:42,438 163384 INFO odoo15 odoo.modules.registry: module web_tour: creating or updating database tables 
+2026-02-06 14:56:42,508 163384 INFO odoo15 odoo.modules.loading: loading web_tour/security/ir.model.access.csv 
+2026-02-06 14:56:42,521 163384 INFO odoo15 odoo.modules.loading: loading web_tour/security/ir.rule.csv 
+2026-02-06 14:56:42,535 163384 INFO odoo15 odoo.modules.loading: loading web_tour/views/tour_views.xml 
+2026-02-06 14:56:42,589 163384 INFO odoo15 odoo.modules.loading: Module web_tour loaded in 0.22s, 109 queries 
+2026-02-06 14:56:42,590 163384 INFO odoo15 odoo.modules.loading: 7 modules loaded in 5.76s, 2353 queries (+0 extra) 
+2026-02-06 14:56:43,017 163384 INFO odoo15 odoo.modules.loading: Modules loaded. 
+2026-02-06 14:56:43,026 163384 INFO odoo15 odoo.modules.registry: Registry loaded in 26.952s 
+2026-02-06 14:56:45,104 163384 INFO odoo15 odoo.addons.base.models.res_users: Login successful for db:odoo15 login:admin@admin.com from 127.0.0.1 
+2026-02-06 14:56:45,125 163384 INFO LCI werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:45] "POST /web/database/create HTTP/1.1" 303 - 16452 19.153 14.253
+2026-02-06 14:56:45,144 163384 INFO odoo15 odoo.addons.base.models.ir_http: Generating routing map for key None 
+2026-02-06 14:56:45,271 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:45] "GET /web HTTP/1.1" 303 - 2 0.001 0.128
+2026-02-06 14:56:46,529 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:46] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.005 0.067
+2026-02-06 14:56:47,631 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:47] "GET /web/login HTTP/1.1" 200 - 101 0.075 2.276
+2026-02-06 14:56:47,818 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:47] "GET /web/assets/13-2a89851/web.assets_common.min.css HTTP/1.1" 200 - 5 0.020 0.099
+2026-02-06 14:56:47,818 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:47] "GET /web/assets/16-3e66210/web.assets_frontend_minimal.min.js HTTP/1.1" 200 - 4 0.018 0.096
+2026-02-06 14:56:47,820 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:47] "GET /web/assets/15-4dcb763/web.assets_common_minimal.min.js HTTP/1.1" 200 - 3 0.014 0.105
+2026-02-06 14:56:47,821 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:47] "GET /web/assets/14-2a4bb5c/web.assets_frontend.min.css HTTP/1.1" 200 - 5 0.014 0.107
+2026-02-06 14:56:48,069 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:48] "GET /web/assets/17-629f9d3/web.assets_common_lazy.min.js HTTP/1.1" 200 - 3 0.004 0.042
+2026-02-06 14:56:48,311 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:48] "GET /web/assets/18-9f3f13b/web.assets_frontend_lazy.min.js HTTP/1.1" 200 - 3 0.002 0.008
+2026-02-06 14:56:48,401 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:48] "GET /web/webclient/translations/1770389808382 HTTP/1.1" 200 - 3 0.004 0.007
+2026-02-06 14:56:48,471 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:48] "GET /web/webclient/qweb/1770389808408?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.008 0.045
+2026-02-06 14:56:48,503 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:48] "GET /web/webclient/translations/1770389808481 HTTP/1.1" 200 - 3 0.003 0.009
+2026-02-06 14:56:48,655 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:48] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.002 0.007
+2026-02-06 14:56:55,830 163384 INFO odoo15 odoo.addons.base.models.ir_cron: Starting job `Base: Auto-vacuum internal data`. 
+2026-02-06 14:56:55,863 163384 INFO odoo15 odoo.addons.base.models.ir_attachment: filestore gc 16 checked, 0 removed 
+2026-02-06 14:56:55,913 163384 INFO odoo15 odoo.addons.base.models.res_users: GC'd 0 user log entries 
+2026-02-06 14:56:55,938 163384 INFO odoo15 odoo.addons.auth_totp.models.auth_totp: GC'd 0 totp devices entries 
+2026-02-06 14:56:55,952 163384 INFO odoo15 odoo.addons.base.models.ir_cron: Job `Base: Auto-vacuum internal data` done. 
+2026-02-06 14:56:56,397 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:56] "GET /web/database/selector HTTP/1.1" 200 - 6 0.008 1.044
+2026-02-06 14:56:57,445 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:57] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:56:59,822 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:59] "GET /web?db=odoo15 HTTP/1.1" 303 - 1 0.001 0.008
+2026-02-06 14:56:59,932 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:56:59] "GET /web/login HTTP/1.1" 200 - 5 0.012 0.080
+2026-02-06 14:57:00,656 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:00] "GET /web/webclient/translations/1770389820643 HTTP/1.1" 200 - 3 0.003 0.004
+2026-02-06 14:57:00,698 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:00] "GET /web/webclient/qweb/1770389820660?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.029
+2026-02-06 14:57:00,740 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:00] "GET /web/webclient/translations/1770389820714 HTTP/1.1" 200 - 3 0.004 0.010
+2026-02-06 14:57:00,850 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:00] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:57:20,210 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:20] "GET /web/database/manager HTTP/1.1" 200 - 6 0.006 0.979
+2026-02-06 14:57:21,288 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:21] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.011
+2026-02-06 14:57:26,446 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:26] "GET /web?db=odoo15 HTTP/1.1" 303 - 1 0.001 0.008
+2026-02-06 14:57:26,580 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:26] "GET /web/login HTTP/1.1" 200 - 5 0.015 0.100
+2026-02-06 14:57:27,041 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:27] "GET /web/webclient/translations/1770389847027 HTTP/1.1" 200 - 3 0.002 0.005
+2026-02-06 14:57:27,081 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:27] "GET /web/webclient/qweb/1770389847045?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.026
+2026-02-06 14:57:27,103 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:27] "GET /web/webclient/translations/1770389847088 HTTP/1.1" 200 - 3 0.002 0.006
+2026-02-06 14:57:27,471 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:27] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 14:57:28,110 163384 INFO odoo15 odoo.addons.base.models.res_users: Login failed for db:odoo15 login:omar.nebi147@gmail.com from 127.0.0.1 
+2026-02-06 14:57:28,133 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:28] "POST /web/login HTTP/1.1" 200 - 9 0.022 0.096
+2026-02-06 14:57:28,257 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:28] "GET /web/binary/company_logo?dbname=odoo15 HTTP/1.1" 200 - 2 0.005 0.010
+2026-02-06 14:57:28,836 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:28] "GET /web/webclient/translations/1770389848819 HTTP/1.1" 200 - 3 0.002 0.005
+2026-02-06 14:57:28,876 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:28] "GET /web/webclient/qweb/1770389848842?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.004 0.023
+2026-02-06 14:57:28,894 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:28] "GET /web/webclient/translations/1770389848881 HTTP/1.1" 200 - 3 0.002 0.005
+2026-02-06 14:57:29,159 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:57:29] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 14:58:36,393 163384 INFO odoo15 odoo.addons.base.models.res_users: Login successful for db:odoo15 login:admin@admin.com from 127.0.0.1 
+2026-02-06 14:58:36,404 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:36] "POST /web/login HTTP/1.1" 303 - 29 0.027 1.003
+2026-02-06 14:58:37,755 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:37] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.011 0.045
+2026-02-06 14:58:39,862 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:39] "GET /web HTTP/1.1" 200 - 169 0.123 3.328
+2026-02-06 14:58:39,991 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:39] "GET /web/assets/21-6561016/web.assets_backend.min.js HTTP/1.1" 200 - 2 0.009 0.034
+2026-02-06 14:58:39,992 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:39] "GET /web/assets/22-6b24b36/web.assets_backend_prod_only.min.js HTTP/1.1" 200 - 2 0.011 0.030
+2026-02-06 14:58:39,993 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:39] "GET /web/assets/19-6561016/web.assets_backend.min.css HTTP/1.1" 200 - 2 0.004 0.044
+2026-02-06 14:58:40,012 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "GET /web/assets/20-2a89851/web.assets_common.min.js HTTP/1.1" 200 - 2 0.004 0.061
+2026-02-06 14:58:40,026 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "GET /web/webclient/load_menus/1f5717edb4e7bec8acddc90b224f148fb9c759c1c5c867ed74b93ffc796e8f1b HTTP/1.1" 200 - 1 0.001 0.008
+2026-02-06 14:58:40,034 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "GET /web/webclient/translations/5227498d9df4b403b0244c75aac21e0c091e50ce?lang=en_US HTTP/1.1" 200 - 5 0.005 0.009
+2026-02-06 14:58:40,429 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "GET /web/webclient/locale/en_US HTTP/1.1" 200 - 1 0.001 0.004
+2026-02-06 14:58:40,513 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 200 - 7 0.007 0.012
+2026-02-06 14:58:40,549 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "POST /web/action/load HTTP/1.1" 200 - 28 0.028 0.025
+2026-02-06 14:58:40,647 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 58 0.040 0.047
+2026-02-06 14:58:40,724 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 42 0.027 0.020
+2026-02-06 14:58:40,748 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.004 0.008
+2026-02-06 14:58:40,988 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:40] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.001 0.004
+2026-02-06 14:58:41,942 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 14:58:41] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 15:07:05,495 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:05] "GET /web/session/logout HTTP/1.1" 303 - 1 0.001 0.009
+2026-02-06 15:07:05,525 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:05] "GET /web HTTP/1.1" 303 - 1 0.001 0.009
+2026-02-06 15:07:05,652 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:05] "GET /web/login HTTP/1.1" 200 - 5 0.013 0.092
+2026-02-06 15:07:05,953 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:05] "GET /web/webclient/translations/1770390425941 HTTP/1.1" 200 - 3 0.002 0.004
+2026-02-06 15:07:05,990 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:05] "GET /web/webclient/qweb/1770390425957?bundle=web.assets_frontend HTTP/1.1" 200 - 10 0.005 0.024
+2026-02-06 15:07:06,012 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:06] "GET /web/webclient/translations/1770390425997 HTTP/1.1" 200 - 3 0.002 0.006
+2026-02-06 15:07:06,522 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:06] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.008
+2026-02-06 15:07:24,945 163384 INFO odoo15 odoo.addons.base.models.res_users: Login successful for db:odoo15 login:admin@admin.com from 127.0.0.1 
+2026-02-06 15:07:24,952 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:24] "POST /web/login HTTP/1.1" 303 - 16 0.011 0.986
+2026-02-06 15:07:24,995 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:24] "GET /web HTTP/1.1" 200 - 12 0.007 0.029
+2026-02-06 15:07:25,610 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:25] "GET /web/image?model=res.users&field=avatar_128&id=2 HTTP/1.1" 304 - 5 0.003 0.010
+2026-02-06 15:07:25,626 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:25] "POST /web/action/load HTTP/1.1" 200 - 14 0.015 0.017
+2026-02-06 15:07:25,703 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:25] "POST /web/dataset/call_kw/ir.module.module/load_views HTTP/1.1" 200 - 23 0.018 0.047
+2026-02-06 15:07:25,821 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:25] "POST /web/dataset/call_kw/ir.module.module/search_panel_select_range HTTP/1.1" 200 - 37 0.044 0.038
+2026-02-06 15:07:25,863 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:25] "POST /web/dataset/search_read HTTP/1.1" 200 - 3 0.006 0.015
+2026-02-06 15:07:25,989 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:25] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.009
+2026-02-06 15:07:27,191 163384 INFO odoo15 werkzeug: 127.0.0.1 - - [06/Feb/2026 15:07:27] "GET /web/service-worker.js HTTP/1.1" 404 - 2 0.003 0.007
+2026-02-06 15:08:44,581 163384 INFO ? odoo.service.server: Initiating shutdown 
+2026-02-06 15:08:44,581 163384 INFO ? odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-02-06 15:08:44,805 163384 INFO ? odoo.sql_db: ConnectionPool(used=0/count=0/max=64): Closed 7 connections  
